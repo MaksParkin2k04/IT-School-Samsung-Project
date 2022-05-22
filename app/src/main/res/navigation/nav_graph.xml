@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/view_groups_fragment">
+
+    <fragment
+        android:id="@+id/view_groups_fragment"
+        android:name="com.example.studentdatabaseroom.ViewGroupsFragment"
+        android:label="@string/view_groups_fragment_lable"
+        tools:layout="@layout/fragment_view_groups" >
+        <action
+            android:id="@+id/action_view_groups_to_add_group"
+            app:destination="@id/add_group_fragment" />
+        <action
+            android:id="@+id/action_view_groups_to_details_group"
+            app:destination="@id/details_group_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/details_group_fragment"
+        android:name="com.example.studentdatabaseroom.DetailsGroupFragment"
+        android:label="@string/details_group_fragment_label"
+        tools:layout="@layout/fragment_details_group" >
+        <action
+            android:id="@+id/action_details_group_to_edit_group"
+            app:destination="@id/edit_group_fragment" />
+        <action
+            android:id="@+id/action_details_group_to_edit_student"
+            app:destination="@id/edit_student_fragment" />
+        <action
+            android:id="@+id/action_details_group_to_add_student"
+            app:destination="@id/add_student_fragment" />
+        <argument
+            android:name="groupId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_group_fragment"
+        android:name="com.example.studentdatabaseroom.AddGroupFragment"
+        android:label="@string/add_group_fragment_lable"
+        tools:layout="@layout/fragment_add_group" >
+        <action
+            android:id="@+id/action_add_group_to_view_groups"
+            app:destination="@id/view_groups_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_group_fragment"
+        android:name="com.example.studentdatabaseroom.EditGroupFragment"
+        android:label="@string/edit_group_fragment_lable"
+        tools:layout="@layout/fragment_edit_group" >
+        <action
+            android:id="@+id/action_edit_group_to_details_group"
+            app:destination="@id/details_group_fragment"
+            app:popUpTo="@id/view_groups_fragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="groupId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_student_fragment"
+        android:name="com.example.studentdatabaseroom.AddStudentFragment"
+        android:label="@string/add_student_fragment_label"
+        tools:layout="@layout/fragment_add_student" >
+        <action
+            android:id="@+id/action_add_student_to_details_group"
+            app:destination="@id/details_group_fragment"
+            app:popUpTo="@id/view_groups_fragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="groupId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_student_fragment"
+        android:name="com.example.studentdatabaseroom.EditStudentFragment"
+        android:label="@string/edit_student_fragment_label"
+        tools:layout="@layout/fragment_edit_student" >
+        <action
+            android:id="@+id/action_edit_student_to_details_group"
+            app:destination="@id/details_group_fragment"
+            app:popUpTo="@id/view_groups_fragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="studentId"
+            app:argType="long" />
+    </fragment>
+</navigation>

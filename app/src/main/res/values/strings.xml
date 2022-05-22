@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">База данных студентов</string>
+
+    <string name="view_groups_fragment_lable">Группы</string>
+    <string name="add_group_fragment_lable">Добавить группу</string>
+    <string name="edit_group_fragment_lable">Редактировать группу</string>
+    <string name="details_group_fragment_label">Детали</string>
+    <string name="edit_student_fragment_label">Редактировать студента</string>
+    <string name="add_student_fragment_label">Добавить студента</string>
+
+
+    <string name="add_group">Добавить группу</string>
+    <string name="add_group_name_hint">Название факультета</string>
+    <string name="add_group_number_hint">Номер группы</string>
+    <string name="add_group_button_text">Добавить</string>
+    <string name="edit_group">Изменить группу</string>
+    <string name="delete_button_text">Удалить</string>
+    <string name="update_button_text">Изменить</string>
+    <string name="add_student_name_hint">Имя</string>
+    <string name="add_student_surname_hint">Фамилия</string>
+    <string name="add_student_patronymic_hint">Отчество</string>
+    <string name="add_student_add_button">Добавить</string>
+    <string name="edit_student_name_hint">Имя</string>
+    <string name="edit_student_surname_hint">Фамилия</string>
+    <string name="edit_student_patronymic_hint">Отчество</string>
+    <string name="edit_student_update_button">Изменить</string>
+    <string name="edit_student_delete_button">Удалить</string>
+    <string name="menu_group_edit">Изменить</string>
+    <string name="menu_main_filtration_students_title">Студенты</string>
+    <string name="filter_group_name_hint">Фильтр название группы</string>
+    <string name="filter_student_surname_hint">Фильтр фамилия студента</string>
+</resources>
