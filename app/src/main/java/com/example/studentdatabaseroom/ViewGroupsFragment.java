@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
@@ -13,6 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -24,9 +28,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ViewGroupsFragment extends Fragment {
 
+    private NavController navController;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        setHasOptionsMenu(true);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_view_groups, container, false);
     }
@@ -36,6 +44,8 @@ public class ViewGroupsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         GroupListViewModel viewModel = getViewModel();
+
+        navController = Navigation.findNavController(view);
 
         GroupListAdapter adapter = new GroupListAdapter();
         adapter.itemClickListener = group -> {
@@ -56,11 +66,11 @@ public class ViewGroupsFragment extends Fragment {
             Navigation.findNavController(view).navigate(navDirections);
         });
 
-        viewModel.getGroups().observe(this, groups -> {
+        viewModel.getGroups().observe(getViewLifecycleOwner(), groups -> {
             adapter.submitList(groups);
         });
 
-        viewModel.getError().observe(this, message -> {
+        viewModel.getError().observe(getViewLifecycleOwner(), message -> {
             if (message != null) {
                 Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
             }
@@ -69,6 +79,22 @@ public class ViewGroupsFragment extends Fragment {
         viewModel.selectGroups();
     }
 
+    @Override
+    public void  onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_search, menu);
+        super.onCreateOptionsMenu(menu,inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.menu_main_filtration_students) {
+            NavDirections navDirections = ViewGroupsFragmentDirections.actionViewGroupsToSearchFragment();
+            navController.navigate(navDirections);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     private GroupListViewModel getViewModel() {
         App app = (App) getActivity().getApplication();

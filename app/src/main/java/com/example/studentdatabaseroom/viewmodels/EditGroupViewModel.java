@@ -18,9 +18,14 @@ public class EditGroupViewModel extends BaseViewModel {
     private final GroupRepository repository;
 
     private final MutableLiveData<Group> currentGroup = new MutableLiveData<>(null);
+    protected final MutableLiveData<Boolean> removeOperationCompleted = new MutableLiveData<>(false);
 
     public LiveData<Group> getCurrentGroup() {
         return currentGroup;
+    }
+
+    public LiveData<Boolean> getRemoveOperationCompleted() {
+        return removeOperationCompleted;
     }
 
     public void getGroup(long groupId) {
@@ -43,7 +48,7 @@ public class EditGroupViewModel extends BaseViewModel {
         repository.update(currentGroup, result -> {
             if (result instanceof Result.Success) {
                 int updateCount = ((Result.Success<Integer>) result).data;
-                operationCompleted.postValue(true);
+                operationCompleted.postValue(updateCount ==1);
             } else {
                 Exception exception = ((Result.Error<Integer>) result).exception;
                 error.postValue(exception.getMessage());
@@ -57,7 +62,7 @@ public class EditGroupViewModel extends BaseViewModel {
         repository.remove(currentGroup, result -> {
             if (result instanceof Result.Success) {
                 int deleteCount = ((Result.Success<Integer>) result).data;
-                operationCompleted.postValue(true);
+                removeOperationCompleted.postValue(deleteCount == 1);
             } else {
                 Exception exception = ((Result.Error<Integer>) result).exception;
                 String message = exception.getMessage();

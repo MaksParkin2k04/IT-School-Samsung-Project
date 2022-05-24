@@ -3,6 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/admin/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/select_dialog_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/layout/fragment_add_group.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/layout/fragment_add_student.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/layout/fragment_details_group.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/layout/fragment_edit_group.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/layout/fragment_edit_student.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/layout/fragment_search.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/layout/fragment_view_groups.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/layout/group_list_item.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/layout/student_list_item.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/menu/menu_group.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/admin/Desktop/StudentDataBaseRoom_M/app/src/main/res/menu/menu_search.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/maxim/Desktop/StudentDataBaseRoom/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
         <entry key="..\:/Users/maxim/Desktop/StudentDataBaseRoom/app/src/main/res/layout/fragment_add_group.xml" value="0.12771739130434784" />
         <entry key="..\:/Users/maxim/Desktop/StudentDataBaseRoom/app/src/main/res/layout/fragment_add_student.xml" value="0.12771739130434784" />

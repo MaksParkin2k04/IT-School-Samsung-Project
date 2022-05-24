@@ -29,4 +29,7 @@
     <string name="menu_main_filtration_students_title">Студенты</string>
     <string name="filter_group_name_hint">Фильтр название группы</string>
     <string name="filter_student_surname_hint">Фильтр фамилия студента</string>
+    <string name="search_student">Поиск</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

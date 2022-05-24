@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_view_groups_to_details_group"
             app:destination="@id/details_group_fragment" />
+        <action
+            android:id="@+id/action_view_groups_to_searchFragment"
+            app:destination="@id/search_fragment" />
     </fragment>
     <fragment
         android:id="@+id/details_group_fragment"
@@ -57,6 +60,9 @@
         <argument
             android:name="groupId"
             app:argType="long" />
+        <action
+            android:id="@+id/action_edit_group_to_view_groups"
+            app:destination="@id/view_groups_fragment" />
     </fragment>
     <fragment
         android:id="@+id/add_student_fragment"
@@ -85,5 +91,13 @@
         <argument
             android:name="studentId"
             app:argType="long" />
+        <argument
+            android:name="groupId"
+            app:argType="long" />
     </fragment>
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.example.studentdatabaseroom.SearchFragment"
+        android:label="@string/search_student"
+        tools:layout="@layout/fragment_search" />
 </navigation>

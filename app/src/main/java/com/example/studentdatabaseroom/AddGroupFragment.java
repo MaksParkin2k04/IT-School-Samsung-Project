@@ -45,13 +45,13 @@ public class AddGroupFragment extends Fragment {
             viewModel.add(name, number);
         });
 
-        viewModel.getError().observe(this, message -> {
+        viewModel.getError().observe(getViewLifecycleOwner(), message -> {
             if (message != null) {
                 Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
             }
         });
 
-        viewModel.getOperationCompleted().observe(this, result -> {
+        viewModel.getOperationCompleted().observe(getViewLifecycleOwner(), result -> {
             if (result != null && result == true) {
                 NavDirections navDirections = AddGroupFragmentDirections.actionAddGroupToViewGroups();
                 Navigation.findNavController(view).navigate(navDirections);

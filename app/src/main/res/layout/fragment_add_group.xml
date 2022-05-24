@@ -18,6 +18,8 @@
         android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#757575"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

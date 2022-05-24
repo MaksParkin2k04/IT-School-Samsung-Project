@@ -4,7 +4,6 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-
 @Entity(tableName = "groups")
 public class Group {
 
@@ -15,8 +14,12 @@ public class Group {
     }
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
     private final long id;
+
+    @ColumnInfo(name = "number")
     private int number;
+
     @ColumnInfo(name = "faculty_name")
     private String facultyName;
 
@@ -38,5 +41,10 @@ public class Group {
 
     public void setFacultyName(String facultyName) {
         this.facultyName = facultyName;
+    }
+
+    @Override
+    public String toString() {
+        return facultyName + " " + String.valueOf(number);
     }
 }

@@ -66,13 +66,13 @@ public class AddStudentFragment extends Fragment {
             viewModel.add(name, patronymic, surname, dateBirth, groupId);
         });
 
-        viewModel.getError().observe(this, message -> {
+        viewModel.getError().observe(getViewLifecycleOwner(), message -> {
             if (message != null) {
                 Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
             }
         });
 
-        viewModel.getOperationCompleted().observe(this, result -> {
+        viewModel.getOperationCompleted().observe(getViewLifecycleOwner(), result -> {
             if (result != null && result == true) {
                 NavDirections navDirections = AddStudentFragmentDirections.actionAddStudentToDetailsGroup(groupId);
                 Navigation.findNavController(view).navigate(navDirections);
